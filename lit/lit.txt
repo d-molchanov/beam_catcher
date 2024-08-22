@@ -1,0 +1,8 @@
+QML:
+https://habr.com/ru/articles/669692/
+https://metanit.com/cpp/qt/3.1.php
+https://www.pythonguis.com/tutorials/pyside-qml-qtquick-python-application/
+https://doc.qt.io/qtforpython-6/tutorials/qmlapp/qmlapplication.html
+
+QML Charts:
+https://www.dmcinfo.com/latest-thinking/blog/id/10452/using-qtcharts-in-a-pysideqml-application
