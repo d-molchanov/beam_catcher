@@ -1,0 +1,4 @@
+MVS:
+/opt/MVS/bin/MVS.sh
+Python samples:
+/opt/MVS/Samples/64/Python/MvImport
