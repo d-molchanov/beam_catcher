@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts
 
 
 ApplicationWindow {
@@ -7,10 +8,12 @@ ApplicationWindow {
     width: 600
     height: 500
     title: "Beam Catcher"
+    id: "main_window"
 
     Row {
         padding: 0
-        spacing: 0
+        spacing: 2
+        height: 32
 
         RowButton {
             id: "btn_camera_control_section"
@@ -53,6 +56,11 @@ ApplicationWindow {
             source: "./icons/display.svg"
             onClicked: {
                 txt_main.text = "Show Display!"
+                if (display_window.visible == true) {
+                    display_window.visible = false;
+                } else {
+                    display_window.visible = true;
+                }
             }
             tooltip: qsTr("Show Display")
         }
@@ -62,6 +70,11 @@ ApplicationWindow {
             source: "./icons/settings.svg"
             onClicked: {
                 txt_main.text = "Show Property Controller!"
+                if (property_controller_window.visible == true) {
+                    property_controller_window.visible = false;
+                } else {
+                    property_controller_window.visible = true;
+                }
             }
             tooltip: qsTr("Show Property Controller")
         }
@@ -75,7 +88,15 @@ ApplicationWindow {
             tooltip: qsTr("Save Image")
         }
 
-        ToolSeparator {}
+        // ToolSeparator {
+        //     orientation: Qt.Vertical
+        // }
+
+        Rectangle {
+            height: parent.height
+            width: 8
+            color: "#00000000"
+        }
         
         RowButton {
             id: "btn_beam_analyzing_section"
@@ -165,13 +186,20 @@ ApplicationWindow {
         font.pixelSize: 24
     }
 
-    ApplicationWindow{
-        id: child_window
-        visible: true
-        width: 300
-        height: 300
-        title: 'Child window'
-        x: 500
+    DisplayWindow {
+        id: display_window
+        visible: false
     }
+
+    PropertyControllerWindow {
+        id: property_controller_window
+        visible: true
+    }
+
+    TableViewExampleTwo {
+        // visible: false
+    }
+
+
 
 }
