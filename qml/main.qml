@@ -197,7 +197,7 @@ ApplicationWindow {
     }
 
     TableViewExampleTwo {
-        // visible: false
+        visible: false
     }
 
 
